@@ -1,7 +1,14 @@
-import type {StructureResolver} from 'sanity/structure'
+// structure.js
+import {
+    singletonDocumentListItem,
+    singletonDocumentListItems,
+    filteredDocumentListItems
+} from "sanity-plugin-singleton-tools";
+import { BlockElementIcon, ApiIcon } from "@sanity/icons";
+import { ConfigContext } from "sanity";
+import { StructureBuilder } from "sanity/structure";
 
-// https://www.sanity.io/docs/structure-builder-cheat-sheet
-export const structure: StructureResolver = (S) =>
-  S.list()
-    .title('Content')
-    .items(S.documentTypeListItems())
+export const structureTool = (S: StructureBuilder, context: ConfigContext) =>
+    S.list()
+        .title("Site Defaults")
+        .items([...singletonDocumentListItems({ S, context })]);
