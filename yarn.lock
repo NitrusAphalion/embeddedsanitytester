@@ -2195,7 +2195,7 @@
     "@sanity/client" "^6.21.3"
     "@types/react" "^18.3.5"
 
-"@sanity/ui@^1.9.3":
+"@sanity/ui@^1.0.0", "@sanity/ui@^1.9.3":
   version "1.9.3"
   resolved "https://registry.yarnpkg.com/@sanity/ui/-/ui-1.9.3.tgz#4af45902ac95801aa5ea57f377beaf3e3cb36339"
   integrity sha512-AdWEVFaK0Snk6xxP0lGPVP3QQYKwzkfGFpFZnL9d6UtWt8yeuS8BMLVAzmXzg14hrqH50ex9nvNl3eq6a0MWiw==
@@ -7471,13 +7471,13 @@ sanity-diff-patch@^3.0.2:
   dependencies:
     "@sanity/diff-match-patch" "^3.0.0"
 
-sanity-plugin-markdown@^5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/sanity-plugin-markdown/-/sanity-plugin-markdown-5.0.0.tgz#adb56516573509691f0683af4851e631d0cd0e5b"
-  integrity sha512-EzyJ6f/TcQevIZushOG5HKGIu9aUggktbH5th16EwTlHtGWjxO1aEuarMv362FmVaVYPh7YOHe9JuBkkGBE0KQ==
+sanity-plugin-markdown@4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/sanity-plugin-markdown/-/sanity-plugin-markdown-4.1.2.tgz#7bfacaf46abb6683b603ca82b07155d5044f9a09"
+  integrity sha512-sPCwB3O1xcylOeG6l8pZPn9aqV4vcLa6Z9LBysCuEk0sc27JqqmdLpZcmAI8B8J809LCsMNPdECLraAoNuS/XQ==
   dependencies:
     "@sanity/incompatible-plugin" "^1.0.4"
-    "@sanity/ui" "^2.8.9"
+    "@sanity/ui" "^1.0.0"
     react-simplemde-editor "^5.2.0"
 
 sanity-plugin-media@^2.3.2:
