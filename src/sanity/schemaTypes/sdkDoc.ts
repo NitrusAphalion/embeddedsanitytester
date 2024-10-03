@@ -19,12 +19,6 @@ export const sdkDoc = defineType({
             name: "markdown",
             type: "markdown",
             title: "Markdown"
-        }),
-        defineField({
-            name: "sdkDocs",
-            type: "array",
-            of: [{ type: "reference", to: [{ type: "sdkDoc" }] }],
-            title: "SDK Documents"
         })
     ]
 });

@@ -14,6 +14,8 @@ import { singletonTools } from 'sanity-plugin-singleton-tools';
 import { apiVersion, dataset, projectId } from './src/sanity/env';
 import { schema } from './src/sanity/schema';
 import { media } from 'sanity-plugin-media';
+import { hierarchicalDocumentList } from '@sanity/hierarchical-document-list';
+import { structure } from './src/sanity/structure';
 
 export default defineConfig({
   name: 'default',
@@ -21,11 +23,12 @@ export default defineConfig({
   projectId,
   dataset,
   plugins: [
-    structureTool(),
+    structureTool({ structure: structure }),
     visionTool({ defaultApiVersion: apiVersion }),
     markdownSchema(),
     singletonTools(),
     media(),
+    hierarchicalDocumentList(),
   ],
   schema,
 });
