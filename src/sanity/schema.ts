@@ -8,7 +8,9 @@ import { footerBlock } from "./schemaTypes/footerBlock";
 import { heroBlock } from "./schemaTypes/heroBlock";
 import { blockCard } from "./schemaTypes/blockCard";
 import { quoteBlock } from "./schemaTypes/quoteBlock";
-import { hierarchyTree } from "@sanity/hierarchical-document-list";
+import { desktopSdkDoc } from "./schemaTypes/desktopSdkDocs";
+import { webSdkDoc } from "./schemaTypes/webSdkDocs";
+import { widgetSdkDoc } from "./schemaTypes/widgetSdkDocs";
 
 export const schema: { types: SchemaTypeDefinition[] } = {
     types: [
@@ -21,6 +23,8 @@ export const schema: { types: SchemaTypeDefinition[] } = {
         heroBlock,
         blockCard,
         quoteBlock,
-        hierarchyTree
+        desktopSdkDoc,
+        webSdkDoc,
+        widgetSdkDoc
     ]
 };

@@ -7,36 +7,17 @@ import {
 import { ApiIcon } from "@sanity/icons";
 import { ConfigContext } from "sanity";
 import { StructureBuilder } from "sanity/structure";
-import { createDeskHierarchy } from "@sanity/hierarchical-document-list";
 
 export const structure = (S: StructureBuilder, context: ConfigContext) =>
     S.list()
         .title("Types")
         .items([
-            createDeskHierarchy({
-                S,
-                context,
-                title: "Desktop SDK Docs",
-                documentId: "desktopSdkDocs",
-                referenceTo: ["sdkDoc"],
-                maxDepth: 5 // GROQ doesnt support recursion so keep this sync'd with the # of levels in the GROQ-query
-            }),
-            createDeskHierarchy({
-                S,
-                context,
-                title: "Web SDK Docs",
-                documentId: "webSdkDocs",
-                referenceTo: ["sdkDoc"],
-                maxDepth: 5
-            }),
-            createDeskHierarchy({
-                S,
-                context,
-                title: "Widget SDK Docs",
-                documentId: "widgetSdkDocs",
-                referenceTo: ["sdkDoc"],
-                maxDepth: 5
-            }),
+            ...filteredDocumentListItems({ S, context }).filter((item: any) =>
+                ["desktopSdkDoc", "webSdkDoc", "widgetSdkDoc"].includes(
+                    item.spec.id
+                )
+            ),
+            S.divider(),
             singletonDocumentListItem({
                 S,
                 context,
@@ -50,5 +31,10 @@ export const structure = (S: StructureBuilder, context: ConfigContext) =>
                 (item: any) => item.spec.id !== "openApiSpecificationDocs"
             ),
             S.divider(),
-            ...filteredDocumentListItems({ S, context })
+            ...filteredDocumentListItems({ S, context }).filter(
+                (item: any) =>
+                    !["desktopSdkDoc", "webSdkDoc", "widgetSdkDoc"].includes(
+                        item.spec.id
+                    )
+            )
         ]);
