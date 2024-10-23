@@ -11,6 +11,11 @@ export const desktopSdkDoc = defineType({
             title: "Title"
         }),
         defineField({
+            name: "section",
+            type: "string",
+            title: "Section"
+        }),
+        defineField({
             name: "order",
             type: "number",
             title: "Order"
